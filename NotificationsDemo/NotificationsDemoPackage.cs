@@ -20,17 +20,17 @@ namespace NotificationsDemo
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             ReportProgress(1, 3);
-            await Task.Delay(2000);
+            await Task.Delay(3000);
 
             ReportProgress(2, 3);
-            await Task.Delay(2000);
+            await Task.Delay(3000);
 
             ReportProgress(3, 3);
         }
 
         private void ReportProgress(int currentSteps, int numberOfSteps)
         {
-            UseStatusBarAsync(currentSteps, numberOfSteps)
+            UseVsMessageBoxAsync(currentSteps, numberOfSteps)
                 .ConfigureAwait(false);
         }
 
@@ -73,7 +73,7 @@ namespace NotificationsDemo
                 Assumes.Present(factory);
 
                 _dialog = factory.CreateInstance();
-                _dialog.StartWaitDialog("Demo", "Working on it...", "", null, "", 1, false, true);
+                _dialog.StartWaitDialog("Demo", "Working on it...", "", null, "", 1, true, true);
             }
 
             _dialog.UpdateProgress("In progress", $"Step {currentSteps} of {numberOfSteps} completed", $"Step {currentSteps} of {numberOfSteps} completed", currentSteps, numberOfSteps, true, out _);

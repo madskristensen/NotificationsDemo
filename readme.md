@@ -1,0 +1,1 @@
+Guideline for showing notifications and progress: <https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/notifications-and-progress-for-visual-studio>
